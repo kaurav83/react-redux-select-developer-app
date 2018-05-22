@@ -1,8 +1,9 @@
-import initialReducer from './initial_reducer';
+import {users, language} from './initial_reducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-    initialReducer
+    users,
+    language
 })
 
 export default rootReducer;

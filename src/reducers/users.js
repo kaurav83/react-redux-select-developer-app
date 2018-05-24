@@ -4,17 +4,17 @@ import {
     RECEIVE_USERS
 } from '../actions';
 
-const language = (state = 'javascript', action) => {
-    switch (action.type) {
+function language(state="C++", action) {
+    switch(action.type) {
         case SELECT_LANGUAGE:
             return action.language
         default:
-            return state
+            return state;
     }
-};
+}
 
-const users = ( state = { isFetching: false, items: [] }, action) => {
-    switch (action.type) {
+function users(state={isFetching: false, items: []}, action) {
+    switch(action.type) {
         case REQUEST_USERS:
             return {
                 ...state,
@@ -25,10 +25,10 @@ const users = ( state = { isFetching: false, items: [] }, action) => {
                 ...state,
                 isFetching: false,
                 items: action.users
-            };
-        default:
-            return state
+            }
+        default: 
+            return state;
     }
-};
+}
 
-export  {language, users};
+export {users, language};

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
 import styles from './Picker.css';
 
-export default class Picker extends Component {
+class Picker extends Component {
+
     render() {
-        const { value, options, onChange } = this.props;
+        const {value, options, onChange} = this.props;
 
         return (
             <div className={styles.root}>
@@ -13,14 +13,20 @@ export default class Picker extends Component {
                     onChange={e => onChange(e.target.value)}
                 >
                     {
-                        options.map(option =>
-                            <option value={option} key={option}>
+                        options.map(option => 
+                            <option 
+                                value={option}
+                                key={option}
+                                style={{color: "#000"}}
+                            >
                                 {option}
                             </option>
                         )
                     }
                 </select>
             </div>
-        );
+        )
     }
 }
+
+export default Picker;

@@ -1,18 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 
-import  './User.css';
+import styles from './User.css';
 
-export default class User extends Component {
-    render() {
-        const { link, name, avatar } = this.props;
-
-        return (
-            <a href={link} target='_blank' className="root">
-                <img className="avatar" src={avatar} />
-                <div className="info">
-                    <div className="name"> {name} </div>
-                </div>
-            </a>
-        );
-    }
+const User = (props) => {
+    return (
+        <a href={props.link} target='_blank'  className={styles.root}>
+            <img src={props.avatar} alt="avatar" className={styles.avatar} />
+            <div className={styles.info}>
+                <div>{props.name}</div>
+            </div>
+        </a>
+    )
 }
+
+export default User;

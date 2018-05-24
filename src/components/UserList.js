@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
+import styles from './UserList.css';
 import User from './User';
 
-import styles from './UserList.css';
+class UserList extends Component {
 
-export default class UserList extends Component {
     render() {
-        const { users } = this.props;
+        const {users} = this.props;
 
         return (
             <div className={styles.shout}>
                 {
-                    users.map(user =>
-                        <User
+                    users.map(user => 
+                        <User 
                             key={user.login}
                             name={user.login}
                             avatar={user.avatar_url}
@@ -21,6 +20,8 @@ export default class UserList extends Component {
                     )
                 }
             </div>
-        );
+        )
     }
 }
+
+export default UserList;
